@@ -20,4 +20,15 @@
 		<header-file src="src/ios/Screenshot.h" />
 		<source-file src="src/ios/Screenshot.m" />
 	</platform>
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Screenshot">
+				<param name="android-package" value="mobi.fabula.cordova.screenshot.Screenshot" />
+			</feature>
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+		<source-file src="src/android/Screenshot.java" target-dir="src/mobi/fabula/cordova/screenshot" />
+	</platform>
 </plugin>
