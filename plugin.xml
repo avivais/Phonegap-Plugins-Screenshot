@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="mobi.fabula.cordova.screenshot" version="0.0.1">
+	<name>Screenshot</name>
+	<description>Cordova Screenshot Plugin</description>
+	<author>Avi Vaisenberger</author>
+	<license>Apache 2.0</license>
+	<keywords>cordova,screenshot</keywords>
+
+	<js-module src="www/screenshot.js" name="screenshot">
+		<clobbers target="window.screenshot" />
+	</js-module>
+
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="Screenshot">
+				<param name="ios-package" value="Screenshot" />
+			</feature>
+		</config-file>
+
+		<header-file src="src/ios/Screenshot.h" />
+		<source-file src="src/ios/Screenshot.m" />
+	</platform>
+</plugin>
